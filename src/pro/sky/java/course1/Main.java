@@ -4,22 +4,17 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        int id;
-        Employee employee1 = new Employee("Сотрудник 1", 1, 1000);
-        id = Employee.id;
-        System.out.println(employee1.getNameOfEmployee() + " " + employee1.getOffice() + " " + employee1.getSalary() + " " + id);
+        Employee employee1 = new Employee("Сотрудник1", 1, 1000);
+        System.out.println(employee1.getNameOfEmployee() + " " + employee1.getOffice() + " " + employee1.getSalary() + " " + employee1.getId());
 
-        Employee employee2 = new Employee("Сотрудник 2", 2, 5_000);
-        id = Employee.id;
-        System.out.println(employee2.getNameOfEmployee() + " " + employee2.getOffice() + " " + employee2.getSalary() + " " + id);
+        Employee employee2 = new Employee("Сотрудник2", 2, 5_000);
+        System.out.println(employee2.getNameOfEmployee() + " " + employee2.getOffice() + " " + employee2.getSalary() + " " + employee2.getId());
 
-        Employee employee3 = new Employee("Сотрудник 3", 3, 500);
-        id = Employee.id;
-        System.out.println(employee3.getNameOfEmployee() + " " + employee3.getOffice() + " " + employee3.getSalary() + " " + id);
+        Employee employee3 = new Employee("Сотрудник3", 3, 500);
+        System.out.println(employee3.getNameOfEmployee() + " " + employee3.getOffice() + " " + employee3.getSalary() + " " + employee3.getId());
 
-        Employee employee4 = new Employee("Сотрудник 4", 4, 3_000);
-        id = Employee.id;
-        System.out.println(employee4.getNameOfEmployee() + " " + employee4.getOffice() + " " + employee4.getSalary() + " " + id);
+        Employee employee4 = new Employee("Сотрудник4", 4, 3_000);
+        System.out.println(employee4.getNameOfEmployee() + " " + employee4.getOffice() + " " + employee4.getSalary() + " " + employee4.getId());
 
 
         employee1.setSalary(50_000);
@@ -35,6 +30,8 @@ public class Main {
         System.out.println("Максимальная заработная плата: " + EmployeeService.maxSalary(employee) + " рублей");
         System.out.println("Средняя заработная плата: " + EmployeeService.averageSalary(employee) + " рублей");
         EmployeeService.printAllNamesOfEmployee(employee);
+
+        System.out.println("Общее число сотрудников: " + Employee.counter);
     }
 }
 

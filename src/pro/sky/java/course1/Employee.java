@@ -4,13 +4,18 @@ public class Employee {
     private final String nameOfEmployee;
     private int office;
     private int salary;
-    public static int id = 0;
+    private int id;
+    public static int counter = 0;
 
     public Employee(String nameOfEmployee, int office, int salary) {
         this.nameOfEmployee = nameOfEmployee;
         this.office = office;
         this.salary = salary;
-        id++;
+        this.id = counter++;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getNameOfEmployee() {
@@ -35,8 +40,8 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Сотруднк {" +
-                "ФИО ='" + nameOfEmployee + '\'' +
+        return "{" + "ID сотрудника = " + id +
+                ", ФИО ='" + nameOfEmployee + '\'' +
                 ", офис=" + office +
                 ", заработная плата=" + salary +
                 '}';
