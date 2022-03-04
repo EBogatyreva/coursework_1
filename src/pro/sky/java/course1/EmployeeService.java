@@ -1,9 +1,9 @@
 package pro.sky.java.course1;
 
 public class EmployeeService {
-    static int sum = 0; //без неё я не смогла вычислить среднюю
 
     public static int sumSalary(Employee[] employee) {
+        int sum = 0;
         for (int i = 0; i < employee.length; i++) {
             if (employee[i] != null) {
                 sum += employee[i].getSalary();
@@ -39,11 +39,14 @@ public class EmployeeService {
     }
 
     public static int averageSalary(Employee[] employee) {
-        int average = 0;
+        int sum = 0;
         for (int i = 0; i < employee.length; i++) {
-            average = sum / Employee.counter;
+            if (employee[i] != null) {
+                sum += employee[i].getSalary();
+            }
         }
-        return average;
+
+        return sum/Employee.counter;
     }
 
     public static void printAllNamesOfEmployee(Employee[] employee) {
